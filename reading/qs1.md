@@ -1,10 +1,12 @@
 # Q-Sharpe Parser 1
 
-The task is to flesh out the following file:	
+The task is to flesh out the following file:
+	
 	/ qs1.q
 	/ translate qsharpe files into q
 
 	\d .qs
+	
 	HEADERS:string`vars`state`indicators`enter`signal_exit`stop_loss`take_profit`time_stop`trailing_stop`exit_policy`execution
 
 	/ entry function
@@ -16,7 +18,7 @@ The task is to flesh out the following file:
 		/ ...
  	  }
  
- Such that when you run the `.qs.l` function with the sample file, it prints out the following records by calling the `processSection` function for each section:
+When you run the `.qs.l` function with the sample file, it should print out the following records by calling the `processSection` function for each section:
 
 	q).qs.l`:strategies/mr1.qs
 	processing vars
@@ -64,4 +66,21 @@ The task is to flesh out the following file:
 	"  stop_loss:"
 	"    urgency: 1.0"
 	"    tif: ioc"
+
+## Unrecognized headers
+Your parser should handle the case of an unrecognized / misspelled header. For example, if you drop the `v` from the `vars:` header in the sample file, we should see:
+
+	q).qs.l`:strategies/mr1.qs
+	'invalid header(s): ars:
+  	[0]  .qs.l`:strategies/mr1.qs
+	
+
+## Q-Sharpe Syntax highlighting
+A syntax highlighter for qsharpe is available in the `resources` folder. You can install it for visual studio with 
+
+	code --install-extension resources/qs-0.0.6.vsix
+	
+(or update the version number if there is a newer version).
+
+Once installed, you will need to restart visual studio for the changes to take effect.
 	
