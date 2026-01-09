@@ -78,7 +78,7 @@ Your parser should handle the case of an unrecognized / misspelled header. For e
 ## Q-Sharpe Syntax highlighting
 A syntax highlighter for qsharpe is available in the `resources` folder. You can install it for visual studio with 
 
-	code --install-extension resources/qs-0.0.6.vsix
+	code --install-extension resources/qs-0.0.7.vsix
 	
 (or update the version number if there is a newer version).
 
